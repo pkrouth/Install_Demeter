@@ -60,7 +60,8 @@ cd $WORK_DIR
 git clone https://github.com/newville/ifeffit
 cd ifeffit
 ./configure --prefix=$PREFIX
-sed -i -e 's/TERMCAP_LIB =.*/TERMCAP_LIB =-L\/opt\/homebrew\/Cellar\/ncurses\/6.3\/lib\/ -lncurses/g' src/cmdline/Makefile
+sed -i -e 's/TERMCAP_LIB =.*/TERMCAP_LIB = -L\/opt\/homebrew\/Cellar\/ncurses\/6.3\/lib\/ -lncurses/g' src/cmdline/Makefile
+### Add correct gcc compiler path here. If Homebrew has gcc installer then use  make CC=/opt/homebrew/Cellar/gcc/12.2.0/bin/gcc-12
 make
 make install
 
